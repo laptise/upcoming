@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'A Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'UPCOMING'),
     );
   }
 }
@@ -73,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          textAlign: TextAlign.right,
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -93,8 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            const Notificatinos(),
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -110,6 +115,18 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class Notificatinos extends StatelessWidget {
+  const Notificatinos({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "お知らせ",
+      style: TextStyle(fontSize: 40),
     );
   }
 }
